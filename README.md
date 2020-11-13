@@ -6,6 +6,7 @@
 - setup and enable email/password authentication  
 - project overview, project setting, add firebase to web app  
 
+```
 <!-- The core Firebase JS SDK is always required and must be listed first -->
 <script src="https://www.gstatic.com/firebasejs/8.0.2/firebase-app.js"></script>
 
@@ -26,6 +27,7 @@
   // Initialize Firebase
   firebase.initializeApp(firebaseConfig);
 </script>
+```
 
 - npx create-react-app dilo-firebase-react
 -
