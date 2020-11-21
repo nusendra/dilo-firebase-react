@@ -43,7 +43,7 @@ const Login = () => {
 
           <div className="flex-sb-m w-full p-t-3 p-b-24">
             <div>
-              <Link to="/tes" className="txt1">
+              <Link to="/register" className="txt1">
                 Register
               </Link>
             </div>
