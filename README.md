@@ -16,13 +16,13 @@
 <script>
   // Your web app's Firebase configuration
   var firebaseConfig = {
-    apiKey: "AIzaSyAtK0akO01LLj_EKvr9hOWi1kkgKAb9YA4",
-    authDomain: "dilo-firebase-react-native.firebaseapp.com",
-    databaseURL: "https://dilo-firebase-react-native.firebaseio.com",
-    projectId: "dilo-firebase-react-native",
-    storageBucket: "dilo-firebase-react-native.appspot.com",
-    messagingSenderId: "971825074095",
-    appId: "1:971825074095:web:d16678208683b811cb695a"
+    apiKey: "",
+    authDomain: "",
+    databaseURL: "",
+    projectId: "",
+    storageBucket: "",
+    messagingSenderId: "",
+    appId: ""
   };
   // Initialize Firebase
   firebase.initializeApp(firebaseConfig);
