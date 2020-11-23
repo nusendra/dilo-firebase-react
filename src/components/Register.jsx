@@ -1,18 +1,19 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
+import { auth } from "../libs/firebase";
 
 const Register = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
-  const registerWithEmailPassword = () => {
-    console.log("aw");
+  const registerWithEmailPassword = async () => {
+    await auth().createUserWithEmailAndPassword(email, password);
   };
 
   return (
     <div className="container-login100">
       <div className="wrap-login100 p-t-50 p-b-90">
-        <form className="login100-form validate-form flex-sb flex-w">
+        <div className="login100-form validate-form flex-sb flex-w">
           <span className="login100-form-title p-b-51">Register</span>
 
           <div
@@ -57,7 +58,7 @@ const Register = () => {
               Register
             </button>
           </div>
-        </form>
+        </div>
       </div>
     </div>
   );

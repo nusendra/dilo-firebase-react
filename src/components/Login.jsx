@@ -1,18 +1,25 @@
-import { useState } from "react";
+import { useState, useContext } from "react";
 import { Link } from "react-router-dom";
+import { GlobalContext } from "../providers/GlobalProvider.jsx";
+import { auth } from "../libs/firebase";
 
 const Login = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const { state, dispatch } = useContext(GlobalContext);
 
-  const loginWithEmailPassword = () => {
-    console.log("aw");
+  const loginWithEmailPassword = async () => {
+    const result = await auth().signInWithEmailAndPassword(email, password);
+    if (result) {
+      dispatch("loggedin");
+    }
   };
 
   return (
     <div className="container-login100">
+      <pre>{state}</pre>
       <div className="wrap-login100 p-t-50 p-b-90">
-        <form className="login100-form validate-form flex-sb flex-w">
+        <div className="login100-form validate-form flex-sb flex-w">
           <span className="login100-form-title p-b-51">Login</span>
 
           <div
@@ -57,7 +64,7 @@ const Login = () => {
               Login
             </button>
           </div>
-        </form>
+        </div>
       </div>
     </div>
   );

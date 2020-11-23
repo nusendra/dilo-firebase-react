@@ -1,16 +1,18 @@
-import React from "react";
+import React, { useContext } from "react";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
 import Home from "./components/Home";
 import Login from "./components/Login";
 import Register from "./components/Register";
 
+import { GlobalContext } from "./providers/GlobalProvider.jsx";
+
 const App = () => {
-  const user = null;
+  const { state } = useContext(GlobalContext);
 
   return (
     <div className="limiter">
-      {user ? (
+      {state ? (
         <Home />
       ) : (
         <Router>
